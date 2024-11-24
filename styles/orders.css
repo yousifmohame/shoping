@@ -1,0 +1,49 @@
+.order-summary {
+    margin: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    direction: rtl;
+}
+
+.order-item {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-around;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 10px;
+    align-items: center;
+}
+
+.order-item img {
+    width: 100px;
+    height: 100px;
+}
+
+.order-item-details {
+    margin-left: 20px;
+}
+
+.order-item-details p {
+    margin: 5px 0;
+}
+
+.total-price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.accept-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.accept-btn:hover {
+    background-color: darkgreen;
+}

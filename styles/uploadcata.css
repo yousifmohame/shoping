@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header{
+    background-color: #4caf50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+}
+.header .incenter{
+    position: absolute;
+    right: 50%;
+}
+.home {
+    background-color: #D7F0FF;
+    display: flex;
+    direction: rtl;
+    padding: 20px;
+    height: 100vh;
+    animation: showitems 2s ease-in;
+    animation-fill-mode: forwards;
+}
+
+.home .navbar {
+    background-color: #D7F0FF;
+    border-radius: 50px;
+    display: grid;
+    width: 5%;
+    justify-content: center;
+}
+
+.header .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+}
+
+.header .logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+
+.home .navbar .menu {
+    border-radius: 50px;
+    background-color: #ffffff;
+    display: grid;
+    justify-content: center;
+    height: fit-content;
+}
+
+.home .navbar .menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.home .navbar .menu ul li {
+    background-color: white;
+    color: #000;
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 10px 5px 10px 5px;
+}
+
+.home .navbar .menu ul li:hover {
+    box-shadow: 1px 1px 10px 1px #000;
+    background-color: black;
+    color: white;
+}
+
+.home .main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.userimg {
+    margin: 12px 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+img#preview {
+    max-width: 45px;
+    /* margin: 10px 0; */
+    /* display: block; */
+    border-radius: 30px;
+}
+
+.upload-form {
+    display: flex;
+    justify-content: center;
+}
+
+form#productForm {
+    display: grid;
+    width: 600px;
+    height: max-content;
+    border: 1px solid #000;
+    padding: 20px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 700;
+}
+select#category {
+    height: 40px;
+}
+
+button {
+    font-size: 25px;
+    font-weight: 700;
+    background-color: #C48CB3;
+    border-radius: 20px;
+    width: 200px;
+    cursor: pointer;
+    margin: auto;
+}
+
+input, textarea, select {
+    margin: 15px;
+    height: 45px;
+    font-size: 20px;
+    padding-right: 10px;
+    font-weight: 700;
+}

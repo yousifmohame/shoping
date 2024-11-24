@@ -1,0 +1,12 @@
+.disp_flex{
+    display: flex;
+}
+.disp_grid{
+    display: grid;
+}
+.bg-cr{
+    background-color: #F0F0F0;
+}
+.or_cr{
+    background-color: #e17c00;
+}

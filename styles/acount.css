@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    background-color: #D7F0FF;
+    display: flex;
+    direction: rtl;
+    padding: 20px;
+    height: 100vh;
+}
+
+.home .navbar {
+    background-color: #D7F0FF;
+    border-radius: 50px;
+    display: grid;
+    width: 5%;
+    justify-content: center;
+}
+
+.home .navbar .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.home .navbar .logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.movelogo {
+    position: absolute;
+    top: 2.5%;
+    right: 2.5%;
+    z-index: 20;
+    animation: movelogo 2s ease ;
+    animation-fill-mode: forwards;
+}
+
+.home .navbar .menu {
+    border-radius: 50px;
+    background-color: #ffffff;
+    display: grid;
+    justify-content: center;
+}
+
+.home .navbar .menu ul {
+    list-style-type: none;
+}
+
+.home .navbar .menu ul li {
+    background-color: white;
+    color: #000;
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 30px 5px 10px 5px;
+}
+
+.home .navbar .menu ul li:hover {
+    box-shadow: 1px 1px 10px 1px #000;
+    background-color: black;
+    color: white;
+}
+
+.home .secacount {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+}
+
+.home .secacount .center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .secacount .info{
+    background-color: #2F4F1C;
+    border: 1px solid #98dd70;
+    width: 400px;
+}
+
+.home .secacount .info .d-flix{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+    background-color: #D7F0FF;
+    border-radius: 20px;
+    margin: 10px;
+    align-items: center;
+}
+.home .secacount .info .d-flix .btn{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+    background-color: #0CA7FF;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+}
