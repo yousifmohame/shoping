@@ -1,0 +1,70 @@
+<!--this page for user to see all items it saved-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/022c27eab9.js" crossorigin="anonymous"></script>
+    <title>My Orders</title>
+    <link rel="stylesheet" href="styles/shoping-car.css"> <!-- Add your CSS file -->
+    <script type="module" src="javascript/shop-car.js" defer></script> <!-- Link your JS file -->
+</head>
+<body>
+    <div class="header">
+        <h1 class="incenter">عربة التسوق</h1>
+        <div class="logo">
+            <img src="img/Amazon-logo.jpg" alt="">
+            
+        </div>
+    </div>
+    <div class="home">
+        <!-- <header>
+            <h1>My Orders</h1>
+            <button id="backBtn">Go Back</button>
+        </header> -->
+        <div class="navbar">
+            <div class="menu">
+                <ul>
+                    <li id="homepagebtn" class="homebtn"><i class="fa-solid fa-house"></i></li>
+                    <li id="viewOrdersBtn"><i class="fa-solid fa-cart-plus"></i></li>
+                    <li id="profilebtn"><i class="fa-solid fa-user"></i></li>
+                    <li><i class="fa-solid fa-bell"></i></li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                    <li id="logoutButton" style="margin-top: 70px; color: #fff; background-color: black;"><i class="fa-solid fa-right-from-bracket"></i></li>
+                    <div class="userimg"><img id="preview" src="#" alt="Profile Picture Preview" /></div>
+                </ul>
+            </div>
+        </div>
+        <div class="main"> 
+            <div id="myOrdersContainer">
+                <div id="ordersList"></div>
+            </div>
+            <div class="sectiontotal">
+                <div class="form">
+                    <h1>اتمام الشراء</h1>
+                    <div class="coupon">
+                        <input class="inputcoupon" type="text" placeholder="أدخل كود الخصم">
+                        <button class="coupon-btn">OK</button>
+                    </div>
+                    <div class="totalprice">
+                    <h2>المجموع للمنتجات</h2>
+                    <h3 id="sumprice">1300 جنيه</h3>
+                    </div>
+                    <div class="transport">
+                        <h2>رسوم التوصيل</h2>
+                        <h3 style="color: green;">توصيل مجاني</h3>
+                    </div>
+                    <hr style="margin: 20px;"> 
+                    <div class="totalall">
+                        <h1>المجموع الكلي</h1>
+                        <h1 id="totalsprice">1326 جنيه</h1>
+                    </div>
+
+                </div>
+                <div class="buybtn">الشراء الأن</div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="javascript/buttoms.js"></script>
+</body>
+</html>

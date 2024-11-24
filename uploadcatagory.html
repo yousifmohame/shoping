@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/uploadcata.css">
+    <script src="https://kit.fontawesome.com/022c27eab9.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="incenter">صفحة رفع المنتجات</h1>
+        <div class="logo">
+            <img src="img/Amazon-logo.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="home">
+        <div class="navbar">
+
+            <div class="menu">
+                <ul>
+                    <li id="homepagebtn" class="homebtn"><i class="fa-solid fa-house"></i></li>
+                    <li id="viewOrdersBtn"><i class="fa-solid fa-cart-plus"></i></li>
+                    <li id="profilebtn"><i class="fa-solid fa-user"></i></li>
+                    <li><i class="fa-solid fa-bell"></i></li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                    <li id="logoutButton" style="margin-top: 70px; color: #fff; background-color: black;"><i class="fa-solid fa-right-from-bracket"></i></li>
+                    <div class="userimg"><img id="preview" src="#" alt="Profile Picture Preview" style="display: none;" /></div>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="upload-form">
+                <!-- <h2>Upload Product</h2> -->
+                <form id="productForm">
+                    <label for="category">اختيار القسم</label>
+                    <select id="category" name="category" required>
+                        <option value="">--اضغط لاختيار القسم--</option>
+                        <option value="clothes">الملابس</option>
+                        <option value="shoese">الاحذية</option>
+                        <option value="books">الكتب</option>
+                        <option value="laptops">لابتوب</option>
+                        <option value="pcs">كمبيوتر مكتبي</option>
+                        <option value="hats">قبعات</option>
+                        <option value="tvs">تلفزيونات</option>
+                        <option value="misc">عطور</option>
+                    </select>
+            
+                    <label for="productName">اسم المنتج :</label>
+                    <input type="text" id="productName" name="productName" required>
+            
+                    <label for="description">وصف المنتج :</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+            
+                    <label for="quantity">الكمية المتاحة :</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required>
+            
+                    <label for="price">سعر المنتج :</label>
+                    <input type="number" id="price" name="price" min="0.01" step="0.01" required>
+            
+                    <label for="productImage">صورة المنتج :</label>
+                    <input type="file" id="productImage" name="productImage" accept="image/*" required>
+            
+                    <button type="submit">رفع المنتج</button>
+                </form>
+            </div>
+            
+        </div>
+
+        </div>
+        <script type="module" src="javascript/uploadcatagor.js" defer></script>
+</body>
+</html>

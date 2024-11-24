@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoping</title>
+    <script src="https://kit.fontawesome.com/022c27eab9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div id="uploadModal" style="display: none;">
+        <div style="background: white; padding: 20px; border-radius: 8px; width: 300px; margin: auto;">
+          <h3>Upload Product</h3>
+          <label>Product Name:</label><br>
+          <input type="text" id="productName" placeholder="Enter product name"><br><br>
+          <label>Description:</label><br>
+          <textarea id="productDescription" placeholder="Enter product description"></textarea><br><br>
+          <label>Quantity:</label><br>
+          <input type="number" id="productQuantity" min="1" value="1"><br><br>
+          <label>price:</label><br>
+          <input type="number" id="productPrice" min="100" value="1"><br><br>
+          <label>Choose Image:</label><br>
+          <input type="file" id="productImage" accept="image/*"><br><br>
+          <button id="submitProduct">Submit</button>
+          <button id="closeModal">Cancel</button>
+        </div>
+      </div>
+  
+    <div class="home">
+    
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/Amazon-logo.jpg" alt="">
+                <div class="movelogo">
+                    <h1>A</h1>
+                </div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><i class="fa-solid fa-house"></i></li>
+                    <li id="viewOrdersBtn"><i class="fa-solid fa-cart-plus"></i></li>
+                    <li><i class="fa-solid fa-user"></i></li>
+                    <li><i class="fa-solid fa-bell"></i></li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                </ul>
+            </div>
+        </div>
+        <div class="middlesec" id="productContainer">
+            <!-- <div class="descripe">
+                <h1 class="font">ADDIDAS SHOESE</h1>
+                <p class="font">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est dolorum facilis harum, 
+                    nisi cumque beatae nostrum dicta ab porro neque officiis illum repellat incidunt iusto?
+                     Recusandae officiis impedit quaerat pariatur?</p>
+            </div> -->
+            <div class="buybtn">BUY NOW</div>
+            
+            <div class="seclike">
+                <ul>
+                    <li><i class="fa-solid fa-heart"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-heart"></i></li>
+                </ul>
+                <ul>
+                    <li>5K</li>
+                    <li>2K</li>
+                    <li>4K</li>
+                </ul>
+            </div>
+            <div class="secupload">
+                <div class="upload" id="uploadd"><i class="fa-solid fa-upload"></i></div>
+            </div>
+            <div class="squareon"></div>
+            <div id="productList"></div>
+            <div class="nextbtn" id="nextBtn">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="inner-section">
+                <div class="maincata">
+                <h2>Explore Catagories</h2>
+                    <ul>
+                        <li>parfum</li>
+                        <li>laptops</li>
+                        <li>books</li>
+                        <li>clothes</li>
+                        <li>shoeses</li>
+                        <li>TV'S</li>
+                        <li>caps</li>
+                        <li>glases</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <div class="leftsec">
+            <div class="search">
+                <i class="fa-solid fa-search icon"></i>
+                <input placeholder="Search any item...." type="text" class="inputfield">
+            </div>
+            <div class="middlebox">
+                <div class="items">
+                    <div class="item1">
+                        <h1>Top sell</h1>
+                        <img src="img/sound.jpg" alt="">
+                        <div class="addbtn"><i class="fa-solid fa-add"></i></div>
+                        <div class="descripeitem">
+                            <h2>speakers</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur,
+                                 adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottonbox"></div>
+        </div>
+    </div>
+    <div class="contaner-1">
+        
+    </div>
+    <script type="module" src="javascript/control.js"></script>
+    <script src="javascript/buttoms.js"></script>
+</body>
+</html>

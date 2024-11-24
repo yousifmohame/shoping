@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <div class="main">
+        <div class="form">
+            <h1>الدخول</h1>
+            <label class="text" for="email">Email</label>
+            <input type="email" placeholder="Enter email" id="email" required>
+            <label class="text" for="password">Password</label>
+            <input type="password" placeholder="Enter password" id="password" required>
+            <button type="button" class="btn" id="login">تسجيل الدخول</button>
+            <p>ليس لديك حساب ؟ <a class="linkreg" id="linkregs">إنشاء حساب</a></p>
+            <div id="error-message"></div>
+            <div id="loader" class="hidden"></div> <!-- Add this loader -->
+        </div>
+    </div>
+    
+
+    <script type="module" src="javascript/login.js"></script>
+</body>
+</html>

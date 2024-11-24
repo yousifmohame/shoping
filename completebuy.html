@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/022c27eab9.js" crossorigin="anonymous"></script>
+    <title>Complete Purchase</title>
+    <link rel="stylesheet" href="styles/completebuy.css">
+</head>
+<body>
+    <div class="header">
+        <h1 class="center">اتمام الشراء</h1>
+        <div class="logo">
+            <img src="img/Amazon-logo.jpg" alt="Logo">
+        </div>
+    </div>
+    <div class="home">
+        <div class="navbar">
+            <div class="menu">
+                <ul>
+                    <li id="homepagebtn" class="homebtn"><i class="fa-solid fa-house"></i></li>
+                    <li id="viewOrdersBtn"><i class="fa-solid fa-cart-plus"></i></li>
+                    <li id="profilebtn"><i class="fa-solid fa-user"></i></li>
+                    <li><i class="fa-solid fa-bell"></i></li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                    <li id="logoutButton" style="margin-top: 70px; color: #fff; background-color: black;"><i class="fa-solid fa-right-from-bracket"></i></li>
+                    <div class="userimg"><img id="preview" src="#" alt="Profile Picture Preview" /></div>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="secaddress">
+                <h2>عنوان التوصيل</h2>
+                <div class="addresscount">
+                    <div class="name">
+                        <h2>الاسم</h2>
+                        <h4 id="userName">Loading...</h4>
+                    </div>
+                    <div class="addresshome">
+                        <h2>العنوان</h2>
+                        <h4 id="userAddress">Loading...</h4>
+                    </div>
+                    <div class="phone">
+                        <h2>الهاتف</h2>
+                        <h4 id="userPhone">Loading...</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="itemsinfo">
+                <h2>مراجعة المنتجات</h2>
+                <div id="orderSummary" class="orderinfo"></div>
+            </div>
+
+            <div class="payway">
+                <h2>طريقة الدفع</h2>
+                <div class="payment-method">
+                    <label>
+                        <input type="radio" name="paymentMethod" value="credit" required>
+                        بطاقة ائتمانية
+                    </label>
+                    <label>
+                        <input type="radio" name="paymentMethod" value="cash">
+                        الدفع عند الاستلام
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="sectiontotal">
+            <div class="form">
+                <h1>اتمام الشراء</h1>
+                
+                <div class="totalprice">
+                    <h2>المجموع للمنتجات</h2>
+                    <h3 id="sumprice">Loading...</h3>
+                </div>
+                <div class="transport">
+                    <h2>رسوم التوصيل</h2>
+                    <h3 style="color: green;">توصيل مجاني</h3>
+                </div>
+                <hr style="margin: 20px;"> 
+                <div class="totalall">
+                    <h1>المجموع الكلي</h1>
+                    <h1 id="totalPrice">Loading...</h1>
+                </div>
+            </div>
+            <div class="complete-btn">اتمام الشراء</div>
+        </div>
+    </div>
+
+    <script type="module" src="javascript/completebuy.js"></script>
+    <script type="module" src="javascript/buttoms.js"></script>
+</body>
+</html>
