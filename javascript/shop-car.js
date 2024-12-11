@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Current user:", user.uid);
             fetchMyOrders(); // Fetch orders for the authenticated user
         } else {
-            alert("You must be logged in to view this page.");
+            alert("يجب تسجيل الدخول للإستمرار");
             window.location.href = "login.html"; // Redirect to login if not authenticated
         }
     });
@@ -68,9 +68,9 @@ const fetchMyOrders = async () => {
 
         // Handle the case where no orders exist
         if (orders.length === 0) {
-            ordersList.innerHTML = "<p>No orders found.</p>";
-            ordersprice.innerHTML = "<p><strong>Total Price:</strong> $0</p>";
-            totalprice.innerHTML = "<p><strong>Total Price:</strong> $0</p>";
+            ordersList.innerHTML = "<p>لم يتم إضافة منتجات</p>";
+            ordersprice.innerHTML = "<p><strong>السعر:</strong> 0</p>";
+            totalprice.innerHTML = "<p><strong>المجموع:</strong> 0</p>";
             return;
         }
 
@@ -189,7 +189,6 @@ const attachBuyButtonListener = () => {
 
                 await setDoc(newDocRef, orderData);
 
-                alert("Purchase completed successfully!");
                 window.location.href = "completebuy.html";
             } catch (error) {
                 console.error("Error completing purchase:", error);

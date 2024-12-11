@@ -1,6 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
-import { getFirestore, collection, getDocs, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+import {
+    getFirestore,
+    collection,
+    query,
+    orderBy,
+    getDocs,
+} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
 
 // Firebase Config
 const firebaseConfig = {
@@ -35,7 +41,8 @@ onAuthStateChanged(auth, async (user) => {
 const loadTrackingOrders = async (userId) => {
     try {
         const ordersRef = collection(db, "orders");
-        const querySnapshot = await getDocs(ordersRef);
+        const q = query(ordersRef, orderBy("createdAt", "desc")); // Sort by createdAt descending
+        const querySnapshot = await getDocs(q);
 
         if (querySnapshot.empty) {
             trackingOrdersList.innerHTML = "<p>No orders found.</p>";
@@ -44,7 +51,7 @@ const loadTrackingOrders = async (userId) => {
 
         trackingOrdersList.innerHTML = ""; // Clear previous data
 
-        querySnapshot.forEach(async (docSnap) => {
+        querySnapshot.forEach((docSnap) => {
             const orderData = docSnap.data();
 
             // Only show orders for the current user
@@ -52,23 +59,18 @@ const loadTrackingOrders = async (userId) => {
                 const orderDiv = document.createElement("div");
                 orderDiv.classList.add("order-tracking");
 
-                // Fetch tracking details
-                const trackingRef = doc(db, "orders", docSnap.id);
-                const trackingSnap = await getDoc(trackingRef);
-                const trackingData = trackingSnap.exists() ? trackingSnap.data() : {};
-
                 // Determine the current level
                 const statusLevels = [
-                    "Order Under Review",
-                    "Order Confirmed",
-                    "Out for Delivery",
-                    "Order Delivered",
+                    "يتم مراجعة الطلب",
+                    "تم تاكيد الطلب",
+                    "طلبك خرج للتوصيل",
+                    "تم تسليم الطلبية",
                 ];
-                const currentLevelIndex = statusLevels.indexOf(trackingData.status || "Order Under Review");
+                const currentLevelIndex = statusLevels.indexOf(orderData.status || "يتم مراجعة الطلب");
 
                 // Render tracking details
                 orderDiv.innerHTML = `
-                    <p><strong>تم الطلب في:</strong> ${orderData.createdAt}</p>
+                    <p><strong>تم الطلب في:</strong> ${new Date(orderData.createdAt.seconds * 1000).toLocaleString()}</p>
                     <p><strong>العنوان:</strong> ${orderData.address}</p>
                     <p><strong>المطلوب سداده:</strong> ${orderData.total} جنيه</p>
                     <h4>Items:</h4>

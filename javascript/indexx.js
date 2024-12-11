@@ -34,7 +34,7 @@ onAuthStateChanged(auth, (user) => {
         console.log("Current user:", user.uid);
         fetchProducts(); // Fetch products after authentication
     } else {
-        alert("You must be logged in to view this page.");
+        alert("الرجاء تسجيل الدخول للبدء قي التسوق");
         window.location.href = "login.html"; // Redirect to login if not authenticated
     }
 });
@@ -79,6 +79,7 @@ const displayProduct = (index) => {
 
     productList.querySelector(".add-to-orders-btn").addEventListener("click", () => {
         addToMyOrders(index);
+        alert("تم الاضافة الي عربة التسوق!");
     });
 
     productList.querySelector(".buybtn").addEventListener("click", async () => {
@@ -90,7 +91,7 @@ const displayProduct = (index) => {
 // Add to Current User's Orders
 const addToMyOrders = async (index) => {
     if (!currentUser) {
-        alert("Please log in to add products to your orders.");
+        alert("برجاء تسجيل الدخول.");
         return;
     }
 
@@ -106,7 +107,7 @@ const addToMyOrders = async (index) => {
             timestamp: new Date(),
         });
 
-        alert("Product added to your orders successfully!");
+        
     } catch (error) {
         console.error("Error adding to orders:", error);
         alert("Failed to add product to orders.");
@@ -130,6 +131,6 @@ document.getElementById("nextBtn").addEventListener("click", () => {
         currentIndex++;
         displayProduct(currentIndex);
     } else {
-        alert("This is the last product!");
+        // alert("This is the last product!");
     }
 });

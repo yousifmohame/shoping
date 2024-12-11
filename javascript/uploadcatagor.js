@@ -1,7 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, doc , setDoc } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-storage.js";
+import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/esm-browser/index.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCeP8QdYt80unnvugRl1cp7sWxosMDMjPM",
@@ -23,7 +24,7 @@ const storage = getStorage(app);
 const productForm = document.getElementById("productForm");
 
 productForm.addEventListener("submit", async (event) => {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
 
     const category = document.getElementById("category").value;
     const productName = document.getElementById("productName").value.trim();
@@ -38,6 +39,9 @@ productForm.addEventListener("submit", async (event) => {
     }
 
     try {
+        // Generate a unique primary key
+        const productId = uuidv4();
+
         // Upload image to Firebase Storage
         const imagePath = `products/${category}/${productImage.name}`;
         const imageRef = storageRef(storage, imagePath);
@@ -45,7 +49,8 @@ productForm.addEventListener("submit", async (event) => {
         const imageUrl = await getDownloadURL(imageRef);
 
         // Save product information to Firestore
-        await addDoc(collection(db, "product_information"), {
+        await setDoc(doc(db, "product_information", productId), {
+            productId, // Include primary key
             category,
             name: productName,
             description,

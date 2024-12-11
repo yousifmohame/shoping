@@ -143,7 +143,48 @@ const removeAllOrders = async () => {
     }
 };
 
-// Call this function when the user completes the purchase (e.g., after placing the order)
+// Function to update product quantities
+const updateProductQuantities = async (itemId, purchasedQuantity) => {
+    try {
+        // Reference to the product in 'product_information' collection
+        const productInfoRef = doc(db, "product_information", itemId);
+        const productInfoDoc = await getDoc(productInfoRef);
+
+        if (productInfoDoc.exists()) {
+            const currentQuantity = productInfoDoc.data().quantity || 0;
+
+            if (currentQuantity >= purchasedQuantity) {
+                // Update the quantity in 'product_information'
+                await setDoc(productInfoRef, { quantity: currentQuantity - purchasedQuantity }, { merge: true });
+            } else {
+                console.warn(`Not enough quantity for item ID: ${itemId}`);
+            }
+        } else {
+            console.error(`Product ID ${itemId} not found in product_information collection.`);
+        }
+
+        // Reference to the product in 'products' collection
+        const productRef = doc(db, "products", itemId);
+        const productDoc = await getDoc(productRef);
+
+        if (productDoc.exists()) {
+            const currentQuantity = productDoc.data().quantity || 0;
+
+            if (currentQuantity >= purchasedQuantity) {
+                // Update the quantity in 'products'
+                await setDoc(productRef, { quantity: currentQuantity - purchasedQuantity }, { merge: true });
+            } else {
+                console.warn(`Not enough quantity for item ID: ${itemId} in products collection.`);
+            }
+        } else {
+            console.error(`Product ID ${itemId} not found in products collection.`);
+        }
+    } catch (error) {
+        console.error(`Error updating quantity for item ID: ${itemId}`, error);
+    }
+};
+
+// Complete-btn event listener
 document.querySelector(".complete-btn").addEventListener("click", async () => {
     const address = userAddressElem.textContent.trim();
     const phone = userPhoneElem.textContent.trim();
@@ -164,7 +205,7 @@ document.querySelector(".complete-btn").addEventListener("click", async () => {
         items: orderItems,
         total: finalTotal.toFixed(2),
         createdAt: new Date().toISOString(),
-        status: "طلبك قيد المراجعة",  // Initial status for tracking
+        status: "يتم مراجعة الطلب", // Initial status for tracking
     };
 
     try {
@@ -172,12 +213,20 @@ document.querySelector(".complete-btn").addEventListener("click", async () => {
         const orderDocRef = doc(db, `orders/${currentUser.uid}-${Date.now()}`);
         await setDoc(orderDocRef, orderData);
 
-        
+        // Update product quantities for each item in the order
+        for (const item of orderItems) {
+            if (item.id && item.quantity) {
+                await updateProductQuantities(item.id, item.quantity);
+            } else {
+                console.warn("Invalid item data:", item);
+            }
+        }
+
         // Remove all items from the 'myOrders' collection after the purchase
         await removeAllOrders();
 
-        alert("Order placed successfully and tracking information saved!");
-        window.location.href = "index.html"; // Redirect to the thank you page
+        alert("Order placed successfully and quantities updated!");
+        window.location.href = "trackinng.html"; // Redirect to the thank you page
     } catch (error) {
         console.error("Error placing order:", error);
         alert("Failed to place order.");

@@ -19,10 +19,10 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 // Select elements by ID
-const home = document.getElementById("homepagebtn");
-const carshop = document.getElementById("viewOrdersBtn");
+const home = document.getElementById("controlpagebtn");
+const uploadorder = document.getElementById("addOrderBtn");
 const profile = document.getElementById("profilebtn");
-const tracking = document.getElementById("ordertrackbtn");
+const recieveorder = document.getElementById("recievebtn");
 const logoutButton = document.getElementById('logoutButton');
 const profilePicPreview = document.getElementById("preview");
 const searchInput = document.getElementById("searchInput");
@@ -36,13 +36,13 @@ let cachedResults = [];
 // Navigation buttons for homepage, shopping cart, and profile
 if (home) {
     home.addEventListener("click", function () {
-        window.location.href = "index.html";
+        window.location.href = "control.html";
     });
 }
 
-if (carshop) {
-    carshop.addEventListener("click", function () {
-        window.location.href = "shopping-car.html"; // Ensure .html if needed
+if (uploadorder) {
+    uploadorder.addEventListener("click", function () {
+        window.location.href = "uploadcatagory.html"; // Ensure .html if needed
     });
 }
 
@@ -51,9 +51,9 @@ if (profile) {
         window.location.href = "myacount.html";
     });
 }
-if (tracking) {
-    tracking.addEventListener("click", function () {
-        window.location.href = "trackinng.html";
+if (recieveorder) {
+    recieveorder.addEventListener("click", function () {
+        window.location.href = "orders.html";
     });
 }
 

@@ -22,17 +22,38 @@ const auth = getAuth();
 const urlParams = new URLSearchParams(window.location.search);
 const categoryName = urlParams.get("name");
 
-const categoryTitle = document.getElementById("categoryTitle");
 const itemsContainer = document.getElementById("itemsContainer");
+
+const categoryTitles = document.querySelectorAll(".categoryTitle");
+categoryTitles.forEach((title) => {
+    if (title.dataset.category === categoryName) {
+        title.style.borderBottom = "2px solid #e17c00";
+        title.style.color ="#e17c00";
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const categories = document.querySelectorAll(".maincata ul li");
+
+    categories.forEach((category) => {
+        category.addEventListener("click", () => {
+            const categoryName = category.getAttribute("data-category");
+            // Corrected template literal for category redirection
+            window.location.href = `category.html?name=${encodeURIComponent(categoryName)}`;
+        });
+    });
+});
+
 
 // Function to fetch and display items in the category
 const fetchData = async () => {
     if (!categoryName) {
-        categoryTitle.textContent = "لم يتم تحديد القسم.";
+        // categoryTitle.textContent = "لم يتم تحديد القسم.";
         return;
     }
 
-    categoryTitle.textContent = categoryName;
+    // categoryTitle.textContent = categoryName;
 
     const itemsQuery = query(
         collection(db, "product_information"),
@@ -57,7 +78,7 @@ const fetchData = async () => {
             itemElement.innerHTML = `
             <div class="card">
                 <div class="imgsec" style="position: relative;">
-                    <img src="${item.imageUrl}" alt="${item.name}" style="width: 100%; height: 350px;" class="item-image">
+                    <img src="${item.imageUrl}" alt="${item.name}" style="width: 100%; height: 350px; cursor:pointer;" class="item-image">
                     <div class="infoitem">
                         <h3>${item.name}</h3>
                     </div>
@@ -110,6 +131,7 @@ const addToMyOrders = async (product) => {
             quantity: product.quantity,
             price: product.price,
             imageUrl: product.imageUrl,
+            productId: product.productId,
             timestamp: new Date(),
         });
 

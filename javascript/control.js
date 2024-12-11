@@ -35,9 +35,7 @@ const productImageInput = document.getElementById("productImage");
 uploadBtn.addEventListener("click", () => {
     uploadModal.style.display = "flex";
 });
-document.getElementById("viewOrdersBtn").addEventListener("click", () => {
-    window.location.href = "shopping-car.html";
-});
+
 
 
 // Close Modal
@@ -134,7 +132,6 @@ const displayProduct = (index) => {
         <p class="font">${product.description}</p>
         <p><strong>Quantity Available:</strong> ${product.quantity}</p>
         <p><strong>Price:</strong> ${product.price}</p>
-        <button class="add-to-orders-btn"><i class="fa-solid fa-cart-plus"></i></button>
         <button class="remove-btn  delete"><i class="fa-solid fa-remove"></i></button>
         </div>
     `;
@@ -145,10 +142,8 @@ const displayProduct = (index) => {
     productCard.querySelector(".remove-btn").addEventListener("click", async () => {
         await removeProduct(index);
     });
-    productCard.querySelector(".add-to-orders-btn").addEventListener("click", async () => {
-        await addToMyOrders(index);
-    });
 };
+
 
 
 const removeProduct = async (index) => {
