@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 .header{
     background-color: #6200ea;
     color: white;
@@ -12,19 +11,19 @@
     font-family: Arial, sans-serif;
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-
 .header .incenter{
     position: absolute;
     right: 50%;
 }
-
 .home {
     background-color: #F0F0F0;
     display: flex;
     direction: rtl;
     padding: 20px;
-    height: 100vh;
     animation: showitems 2s ease-in;
     animation-fill-mode: forwards;
 }
@@ -52,12 +51,14 @@
     border-radius: 50px;
 }
 
+
 .home .navbar .menu {
     border-radius: 50px;
     background-color: #ffffff;
     display: grid;
     justify-content: center;
     height: fit-content;
+    position: fixed;
 }
 
 .home .navbar .menu ul {

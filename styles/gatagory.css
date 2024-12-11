@@ -4,14 +4,44 @@
     box-sizing: border-box;
 }
 .header{
-    background-color: #6200ea;
+    background-color: white;
     color: white;
-    padding: 2rem;
     text-align: center;
     font-family: Arial, sans-serif;
     display: flex;
     align-items: center;
+    position: sticky;
+    direction: rtl;
+    top: 0;
+    z-index: 1000;
 }
+.header .maincata{
+    display: flex;
+    margin-right: 95px;
+}
+
+.header .maincata ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.header .maincata ul li{
+    height: auto;
+    width: max-content;
+    padding: 10px 20px 10px 20px;
+    background-color: transparent;
+    margin: 10px 10px 0px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.header .maincata ul li:hover{
+    border-bottom: 2px solid #000;
+}
+
 .header .incenter{
     position: absolute;
     right: 50%;
@@ -55,6 +85,7 @@
     display: grid;
     justify-content: center;
     height: fit-content;
+    position: fixed;
 }
 
 .home .navbar .menu ul {
@@ -120,6 +151,9 @@ div#itemsContainer {
 .card {
     margin: 5px;
 }
+.card img{
+    cursor: pointer;
+}
 .infoitem {
     position: absolute;
     bottom: 3px;
@@ -159,7 +193,8 @@ button.add-to-orders-btn {
     cursor: pointer;
 }
 button.add-to-orders-btn:hover {
-    background-color: transparent;
+    background-color: black;
+    color: #fff;
 }
 button.buybtn:hover {
     background-color: #3b028a;
