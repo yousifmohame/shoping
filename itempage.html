@@ -3,27 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/022c27eab9.js" crossorigin="anonymous"></script>
     <title>Item Details</title>
     <link rel="stylesheet" href="styles/itempage.css">
     <script type="module" defer src="javascript/itempage.js"></script> <!-- JavaScript file -->
 </head>
 <body>
-    <header>
-        <h1>تفاصيل المنتج</h1>
-    </header>
+    <div class="header">
+        <h1 class="incenter">تفاصيل المنتج</h1>
+        <div class="logo">
+            <img src="img/Amazon-logo.jpg" alt="">
+            
+        </div>
+    </div>
+    <div class="home">
+        <!-- <header>
+            <h1>My Orders</h1>
+            <button id="backBtn">Go Back</button>
+        </header> -->
+        <div class="navbar">
+            <div class="menu">
+                <ul>
+                    <li id="homepagebtn" class="homebtn"><i class="fa-solid fa-house"></i></li>
+                    <li id="viewOrdersBtn"><i class="fa-solid fa-cart-plus"></i></li>
+                    <li id="ordertrackbtn"><i class="fa-duotone fa-solid fa-truck-fast"></i></li>
+                    <li id="profilebtn"><i class="fa-solid fa-user"></i></li>
+                    <li><i class="fa-solid fa-bell"></i></li>
+                    <li id="logoutButton" style="margin-top: 70px; color: #fff; background-color: black;"><i class="fa-solid fa-right-from-bracket"></i></li>
+                    <div class="userimg"><img id="preview" src="#" alt="Profile Picture Preview" /></div>
+                </ul>
+            </div>
+        </div>
 
-    <main>
-        <!-- Container for the item details -->
-        <div id="itemContainer" class="item-container"></div>
-        <div id="loadingSpinner" style="display:none;">Loading...</div>
-        <h2>منتجات مشابهة</h2>
-        <!-- Container for similar items -->
-        <div id="similarItemsContainer" class="similar-items-container"></div>
-    </main>
+        <div class="main">
+            <div id="itemContainer" class="item-container"></div>
+            <h2>منتجات مشابهة</h2>
+            <div id="similarItemsContainer" class="similar-items-container"></div>
+        </div>
 
-    <footer>
-        <p>جميع الحقوق محفوظة © 2024</p>
-    </footer>
+    </div>
+    
     <script type="module" src="javascript/buttoms.js"></script>
 </body>
 </html>

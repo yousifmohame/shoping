@@ -4,16 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/022c27eab9.js" crossorigin="anonymous"></script>
     <title>All Delivery Orders</title>
     <link rel="stylesheet" href="styles/orders.css">
 </head>
 
 <body>
-    <h1>All Delivery Orders</h1>
+    <div class="header">
+        <h1 class="incenter">صفحة استلام المنتجات</h1>
+        <div class="logo">
+            <img src="img/Amazon-logo.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="home">
+        <div class="navbar">
+
+            <div class="menu">
+                <ul>
+                    <li id="controlpagebtn" class="homebtn"><i class="fa-solid fa-house"></i></li>
+                    <li id="addOrderBtn"><i class="fa-solid fa-plus"></i></li>
+                    <li id="recievebtn"><i class="fa-sharp fa-solid fa-download"></i></li>
+                    <li id="profilebtn"><i class="fa-solid fa-user"></i></li>
+                    <li id="logoutButton" style="margin-top: 70px; color: #fff; background-color: black;"><i class="fa-solid fa-right-from-bracket"></i></li>
+                    <div class="userimg"><img id="preview" src="#" alt="Profile Picture Preview" /></div>
+                </ul>
+            </div>
+        </div>
 
     <div id="ordersList"></div>
+    </div>
 
     <script type="module" src="javascript/orders.js"></script>
+    <script type="module" src="javascript/buttoms-2.js"></script>
 </body>
 
 </html>

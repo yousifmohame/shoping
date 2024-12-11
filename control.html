@@ -10,19 +10,19 @@
 <body>
     <div id="uploadModal" style="display: none;">
         <div style="background: white; padding: 20px; border-radius: 8px; width: 300px; margin: auto;">
-          <h3>Upload Product</h3>
-          <label>Product Name:</label><br>
-          <input type="text" id="productName" placeholder="Enter product name"><br><br>
-          <label>Description:</label><br>
-          <textarea id="productDescription" placeholder="Enter product description"></textarea><br><br>
-          <label>Quantity:</label><br>
+          <h3>رفع منتج</h3>
+          <label>اسم المنتح:</label><br>
+          <input type="text" id="productName" placeholder="ادخل اسم المنتج"><br><br>
+          <label>وصف المنتج:</label><br>
+          <textarea id="productDescription" placeholder="ادخل وصف المنتج"></textarea><br><br>
+          <label>الكمية:</label><br>
           <input type="number" id="productQuantity" min="1" value="1"><br><br>
-          <label>price:</label><br>
+          <label>السعر:</label><br>
           <input type="number" id="productPrice" min="100" value="1"><br><br>
-          <label>Choose Image:</label><br>
+          <label>صورة المنتج:</label><br>
           <input type="file" id="productImage" accept="image/*"><br><br>
-          <button id="submitProduct">Submit</button>
-          <button id="closeModal">Cancel</button>
+          <button id="submitProduct">رفع</button>
+          <button id="closeModal">الخروج</button>
         </div>
       </div>
   
@@ -37,11 +37,12 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><i class="fa-solid fa-house"></i></li>
-                    <li id="viewOrdersBtn"><i class="fa-solid fa-cart-plus"></i></li>
-                    <li><i class="fa-solid fa-user"></i></li>
-                    <li><i class="fa-solid fa-bell"></i></li>
-                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                    <li id="controlpagebtn" class="homebtn"><i class="fa-solid fa-house"></i></li>
+                    <li id="addOrderBtn"><i class="fa-solid fa-plus"></i></li>
+                    <li id="recievebtn"><i class="fa-sharp fa-solid fa-download"></i></li>
+                    <li id="profilebtn"><i class="fa-solid fa-user"></i></li>
+                    <li id="logoutButton" style="margin-top: 70px; color: #fff; background-color: black;"><i class="fa-solid fa-right-from-bracket"></i></li>
+                    <div class="userimg"><img id="preview" src="#" alt="Profile Picture Preview" /></div>
                 </ul>
             </div>
         </div>
@@ -52,7 +53,6 @@
                     nisi cumque beatae nostrum dicta ab porro neque officiis illum repellat incidunt iusto?
                      Recusandae officiis impedit quaerat pariatur?</p>
             </div> -->
-            <div class="buybtn">BUY NOW</div>
             
             <div class="seclike">
                 <ul>
@@ -71,7 +71,7 @@
             </div>
             <div class="squareon"></div>
             <div id="productList"></div>
-            <div class="nextbtn" id="nextBtn">
+            <div class="nextbtn" id="nextBtns">
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
             <div class="inner-section">
@@ -113,10 +113,7 @@
             <div class="bottonbox"></div>
         </div>
     </div>
-    <div class="contaner-1">
-        
-    </div>
     <script type="module" src="javascript/control.js"></script>
-    <script src="javascript/buttoms.js"></script>
+    <script type="module" src="javascript/buttoms-2.js"></script>
 </body>
 </html>
